@@ -76,11 +76,11 @@ function isVacationGood(string){
 function checkIfVacationNeedsReplacement(bool){
     let ask;
     if (bool === true){
-        alert("Enjoy your Vacation");
+        alert("Enjoy your Vacation!");
         loopBreak = true;
     }
     else{
-        ask = prompt("What part of your vacation would you like to replace? Type destination, food, transportation, entertainment or all");
+        ask = prompt("What part of your vacation would you like to replace? Type destination, food, transportation, entertainment or all.");
         return ask;
     }
 }
@@ -111,7 +111,7 @@ function replacer(string){
     }
     else{
         alert("Opps, something went wrong, try again.");
-        opps = prompt("What part of your vacation would you like to replace? Type destination, food, transportation, entertainment or all");
+        opps = prompt("What part of your vacation would you like to replace? Type destination, food, transportation, entertainment or all.");
         return replacer(opps);
     }
 }
