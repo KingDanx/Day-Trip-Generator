@@ -1,28 +1,43 @@
 //Dan Prudhomme
 "use strict";
-//(5 points): As a developer, I want to make at least three commits with descriptive messages. -- count 2
+//(5 points): As a developer, I want to make at least three commits with descriptive messages. -- count 3 
 
 //(5 points): As a user, I want a destination to be randomly selected for my day trip.
 let randomDestination = ["Hawaii", "Tennessee", "Florida", "Tokyo", "Perth"];
 
 
 //(5 points): As a user, I want a restaurant to be randomly selected for my day trip.
-let randomFood = ["Foul", "Fish", "Salad", "Pork", "Beef", "CANDY"];
+let randomFood = ["foul", "fish", "salad", "pork", "beef", "CANDY"];
 
 
 //(5 points): As a user, I want a mode of transportation to be randomly selected for my day trip.
-let randomTransportation = ["Car", "Bus", "Train", "Horse", "Walk", "Run", "Ship", "Falcon X Rocet"];
+let randomTransportation = ["rental car", "bus", "train", "horseback", "walking", "running", "ship", "a Falcon X Rocket"];
 
 
 //(5 points): As a user, I want a form of entertainment to be randomly selected for my day trip.
-let randomEntertainment = ["Theme Park", "See the sights", "Shopping Center", "Beach", "Local Museum"];
+let randomEntertainment = ["a theme park", "the local hangouts", "a shopping center", "the beach", "a local museum"];
 
-function getRandom(stringArray){
+function getRandomSingle(stringArray){
     let randomIndex = Math.round(Math.random() * (stringArray.length - 1));
     return stringArray[randomIndex];
 }
+// let randomTest = getRandom(randomFood);
+// console.log(randomTest);
 
-let randomTest = getRandom(randomFood);
-console.log(randomTest);
 /*(15 points): As a user, I want to be able to randomly re-select a destination, restaurant, mode of transportation, and/or form 
 of entertainment if I don’t like one or more of those things.*/
+function getRandomAll(destinationArray, foodArray, transportationArray, entertainmentArray){
+    let destination = "";
+    let food = "";
+    let transportation = "";
+    let entertainment = "";
+
+    destination = getRandomSingle(destinationArray);
+    food = getRandomSingle(foodArray);
+    transportation = getRandomSingle(transportationArray);
+    entertainment = getRandomSingle(entertainmentArray);
+
+    return `Your random vacation is in ${destination} where you will eat ${food}, travel by ${transportation}, and visit ${entertainment}!`;
+}
+let getrandomVacation = getRandomAll(randomDestination, randomFood, randomTransportation, randomEntertainment);
+console.log(getrandomVacation);
