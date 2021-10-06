@@ -1,6 +1,6 @@
 //Dan Prudhomme
 "use strict";
-//(5 points): As a developer, I want to make at least three commits with descriptive messages. -- count 3 
+//(5 points): As a developer, I want to make at least three commits with descriptive messages. -- count 4
 
 //(5 points): As a user, I want a destination to be randomly selected for my day trip.
 let randomDestination = ["Hawaii", "Tennessee", "Florida", "Tokyo", "Perth"];
@@ -41,3 +41,32 @@ function getRandomAll(destinationArray, foodArray, transportationArray, entertai
 }
 let getrandomVacation = getRandomAll(randomDestination, randomFood, randomTransportation, randomEntertainment);
 console.log(getrandomVacation);
+getrandomVacation.toUpperCase
+
+let userVerifyVacation = prompt("Is this vacaton okay with you? Type yes or no.");
+function isVacationGood(string){
+    string = string.toUpperCase();
+    if(string == "N" || string == "NO" || string == "NA" || string == "NAW" || string == "HELL NO" || string == "HELL NAW" || string == "HELL NA" || string[0] == "N"){
+        return false;
+    }
+    else{
+        return true;
+    }
+}
+let verifyVacation = isVacationGood(userVerifyVacation);
+//console.log(verifyVacation);
+
+function checkIfVacationNeedsReplacement(bool){
+    let ask;
+    if (bool === true){
+        return "Enjoy your Vacation";
+    }
+    else{
+        ask = prompt("What part of your vacation would you like to replace?");
+        return ask;
+    }
+}
+let replaceOrKeep = checkIfVacationNeedsReplacement(verifyVacation);
+console.log(replaceOrKeep);
+
+// function replacer
