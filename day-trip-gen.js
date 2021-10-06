@@ -21,7 +21,7 @@ function getRandomSingle(stringArray){
     let randomIndex = Math.round(Math.random() * (stringArray.length - 1));
     return stringArray[randomIndex];
 }
-// let randomTest = getRandom(randomFood);
+let randomTest = getRandomSingle(randomDestination);
 // console.log(randomTest);
 
 /*(15 points): As a user, I want to be able to randomly re-select a destination, restaurant, mode of transportation, and/or form 
@@ -41,7 +41,6 @@ function getRandomAll(destinationArray, foodArray, transportationArray, entertai
 }
 let getrandomVacation = getRandomAll(randomDestination, randomFood, randomTransportation, randomEntertainment);
 console.log(getrandomVacation);
-getrandomVacation.toUpperCase
 
 let userVerifyVacation = prompt("Is this vacaton okay with you? Type yes or no.");
 function isVacationGood(string){
@@ -59,7 +58,7 @@ let verifyVacation = isVacationGood(userVerifyVacation);
 function checkIfVacationNeedsReplacement(bool){
     let ask;
     if (bool === true){
-        return "Enjoy your Vacation";
+        alert("Enjoy your Vacation"); 
     }
     else{
         ask = prompt("What part of your vacation would you like to replace?");
@@ -69,4 +68,6 @@ function checkIfVacationNeedsReplacement(bool){
 let replaceOrKeep = checkIfVacationNeedsReplacement(verifyVacation);
 console.log(replaceOrKeep);
 
-// function replacer
+function replacer(string){
+
+}
