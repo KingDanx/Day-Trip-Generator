@@ -38,8 +38,10 @@ function getRandomAll(destinationArray, foodArray, transportationArray, entertai
     entertainment = getRandomSingle(entertainmentArray);
 
     return `Your random vacation is in ${destination} where you will eat ${food}, travel by ${transportation}, and visit ${entertainment}!`;
+    //I think this should return an array instead so the random outputs can be used elsewhere.
 }
 let getrandomVacation = getRandomAll(randomDestination, randomFood, randomTransportation, randomEntertainment);
+let savedVacation = getrandomVacation;
 console.log(getrandomVacation);
 
 let userVerifyVacation = prompt("Is this vacaton okay with you? Type yes or no.");
@@ -58,10 +60,14 @@ let verifyVacation = isVacationGood(userVerifyVacation);
 function checkIfVacationNeedsReplacement(bool){
     let ask;
     if (bool === true){
+<<<<<<< HEAD
         alert("Enjoy your Vacation"); 
+=======
+        return "Enjoy your vacation";
+>>>>>>> 81ad39d1f48103cf8f1bc551eb0e37e193f84f9e
     }
     else{
-        ask = prompt("What part of your vacation would you like to replace?");
+        ask = prompt("What part of your vacation would you like to replace? Type destination, food, transportation, entertainment or all");
         return ask;
     }
 }
@@ -69,5 +75,16 @@ let replaceOrKeep = checkIfVacationNeedsReplacement(verifyVacation);
 console.log(replaceOrKeep);
 
 function replacer(string){
+<<<<<<< HEAD
 
+=======
+    string = string.toLowerCase;
+    if(string === "Enjoy your vacation"){
+
+    }
+    else if(string === "destination"){
+        getRandomSingle(randomDestination);
+        //.push to outputted array of getRandomAll()
+    }
+>>>>>>> 81ad39d1f48103cf8f1bc551eb0e37e193f84f9e
 }
