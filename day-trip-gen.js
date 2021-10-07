@@ -111,8 +111,12 @@ function replacer(string){
         getRandomVacation = getRandomAll(randomDestination, randomFood, randomTransportation, randomEntertainment);
         longRandomVacationStringOutput();
     }
-    else if(string === "done" || string === ""){
+    else if(string === "done"){
         alert("Enjoy your Vacation!");
+        loopBreak = true;
+        return;
+    }
+    else if(string === ""){
         loopBreak = true;
         return;
     }
