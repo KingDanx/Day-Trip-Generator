@@ -82,7 +82,7 @@ function checkIfVacationNeedsReplacement(bool){
         return empty;
     }
     else{
-        ask = prompt("What part of your vacation would you like to replace? Type destination, food, transportation, entertainment or all.");
+        ask = prompt("What part of your vacation would you like to replace? Type destination, food, transportation, entertainment, all, or done.");
         return ask;
     }
 }
@@ -112,11 +112,13 @@ function replacer(string){
         longRandomVacationStringOutput();
     }
     else if(string === "done" || string === ""){
+        alert("Enjoy your Vacation!");
+        loopBreak = true;
         return;
     }
     else{
         alert("Opps, something went wrong, try again.");
-        opps = prompt("What part of your vacation would you like to replace? Type destination, food, transportation, entertainment, all or done.");
+        opps = prompt("What part of your vacation would you like to replace? Type destination, food, transportation, entertainment, all, or done.");
         return replacer(opps);
     }
         
@@ -129,6 +131,8 @@ while(loopBreak === false){
     if(loopBreak === true){
        break;
     }
-
-    userPromptVacation = prompt("Is this vacaton okay with you? Type yes or no.");
+    else{
+        userPromptVacation = prompt("Is this vacaton okay with you? Type yes or no.");
+    }
+    
 }
