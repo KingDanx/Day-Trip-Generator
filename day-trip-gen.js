@@ -75,9 +75,11 @@ function isVacationGood(string){
 
 function checkIfVacationNeedsReplacement(bool){
     let ask;
+    let empty = "";
     if (bool === true){
         alert("Enjoy your Vacation!");
         loopBreak = true;
+        return empty;
     }
     else{
         ask = prompt("What part of your vacation would you like to replace? Type destination, food, transportation, entertainment or all.");
@@ -109,15 +111,24 @@ function replacer(string){
         getRandomVacation = getRandomAll(randomDestination, randomFood, randomTransportation, randomEntertainment);
         longRandomVacationStringOutput();
     }
+    else if(string === "done" || string === ""){
+        return;
+    }
     else{
         alert("Opps, something went wrong, try again.");
-        opps = prompt("What part of your vacation would you like to replace? Type destination, food, transportation, entertainment or all.");
+        opps = prompt("What part of your vacation would you like to replace? Type destination, food, transportation, entertainment, all or done.");
         return replacer(opps);
     }
+        
+    
 }
 
 
 while(loopBreak === false){
     replacer(checkIfVacationNeedsReplacement(isVacationGood(userPromptVacation)));
+    if(loopBreak === true){
+       break;
+    }
+
     userPromptVacation = prompt("Is this vacaton okay with you? Type yes or no.");
 }
