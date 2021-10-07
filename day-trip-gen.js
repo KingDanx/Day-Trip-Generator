@@ -90,25 +90,63 @@ function checkIfVacationNeedsReplacement(bool){
 
 function replacer(string){
     let opps;
+    let savedValue;
+    let savedArray = [];
     string = string.toLowerCase();
     if(string === "destination"){
+        savedValue = getRandomVacation[0];
         getRandomVacation[0] = getRandomSingle(randomDestination);
-        longRandomVacationStringOutput();
+        if(savedValue === getRandomVacation[0]){
+            return replacer(string);
+        }
+        else{
+            longRandomVacationStringOutput();
+        }
     }
     else if(string === "food"){
+        savedValue = getRandomVacation[1];
         getRandomVacation[1] = getRandomSingle(randomFood);
-        longRandomVacationStringOutput();
+        if(savedValue === getRandomVacation[1]){
+            return replacer(string);
+        }
+        else{
+            longRandomVacationStringOutput();
+        }
     }
     else if(string === "transportation"){
         getRandomVacation[2] = getRandomSingle(randomTransportation);
-        longRandomVacationStringOutput();
+        savedValue = getRandomVacation[2];
+        getRandomVacation[2] = getRandomSingle(randomTransportation);
+        if(savedValue === getRandomVacation[2]){
+            return replacer(string);
+        }
+        else{
+            longRandomVacationStringOutput();
+        }
     }
     else if(string === "entertainment"){
         getRandomVacation[3] = getRandomSingle(randomEntertainment);
-        longRandomVacationStringOutput();
+        savedValue = getRandomVacation[3];
+        getRandomVacation[3] = getRandomSingle(randomEntertainment);
+        if(savedValue === getRandomVacation[3]){
+            return replacer(string);
+        }
+        else{
+            longRandomVacationStringOutput();
+        }   
     }
     else if(string === "all"){
+        savedArray = getRandomVacation;
         getRandomVacation = getRandomAll(randomDestination, randomFood, randomTransportation, randomEntertainment);
+        for(let i = 0; i < savedArray.length; i++){
+            for(let j = 0; j < savedArray.length; j++)
+            {
+                if(savedArray[i] === getRandomVacation[j]){
+                    return replacer(string);
+                }
+            }
+        }
+        
         longRandomVacationStringOutput();
     }
     else if(string === "done"){
